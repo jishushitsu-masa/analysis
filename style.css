@@ -1,0 +1,64 @@
+/* Custom Styles */
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white !important;
+        color: black !important;
+        font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    }
+    
+    .print-hidden {
+        display: none !important;
+    }
+
+    .print-area {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+
+    /* Print Problems only by default */
+    body:not(.printing-answers) #printAnswersOnly {
+        display: none !important;
+    }
+    body:not(.printing-answers) #problemsContent {
+        display: block !important;
+    }
+
+    /* Print Answers only when class is added */
+    body.printing-answers #printAnswersOnly {
+        display: block !important;
+    }
+    body.printing-answers #problemsContent,
+    body.printing-answers .hidden.print\:block {
+        display: none !important;
+    }
+
+    /* Adjust prose spacing for print */
+    .prose h1, .prose h2, .prose h3 {
+        color: black !important;
+        break-after: avoid;
+    }
+    .prose p {
+        margin-top: 0.5em !important;
+        margin-bottom: 0.5em !important;
+    }
+    
+    /* Avoid breaking questions across pages */
+    .prose ol > li {
+        break-inside: avoid;
+        margin-bottom: 2em;
+    }
+}
