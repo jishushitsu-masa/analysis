@@ -81,12 +81,12 @@
                             <div class="flex text-sm text-gray-600 justify-center">
                                 <span class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                     ファイルを選択
-                                    <input id="fileUpload1" name="fileUpload1" type="file" class="sr-only" accept="image/*">
+                                    <input id="fileUpload1" name="fileUpload1" type="file" class="sr-only" accept="image/*" multiple>
                                 </span>
                             </div>
-                            <p class="text-xs text-gray-500">PNG, JPG, JPEG</p>
+                            <p class="text-xs text-gray-500">PNG, JPG, JPEG (複数選択可)</p>
                         </div>
-                        <img id="preview1" class="absolute inset-0 w-full h-full object-cover rounded-xl hidden" />
+                        <div id="previewContainer1" class="absolute inset-0 w-full h-full bg-white border-2 border-indigo-200 rounded-xl hidden flex-wrap gap-2 p-2 overflow-y-auto content-start"></div>
                     </div>
                 </div>
 
@@ -101,12 +101,12 @@
                             <div class="flex text-sm text-gray-600 justify-center">
                                 <span class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                     ファイルを選択
-                                    <input id="fileUpload2" name="fileUpload2" type="file" class="sr-only" accept="image/*">
+                                    <input id="fileUpload2" name="fileUpload2" type="file" class="sr-only" accept="image/*" multiple>
                                 </span>
                             </div>
-                            <p class="text-xs text-gray-500">PNG, JPG, JPEG</p>
+                            <p class="text-xs text-gray-500">PNG, JPG, JPEG (複数選択可)</p>
                         </div>
-                        <img id="preview2" class="absolute inset-0 w-full h-full object-cover rounded-xl hidden" />
+                        <div id="previewContainer2" class="absolute inset-0 w-full h-full bg-white border-2 border-indigo-200 rounded-xl hidden flex-wrap gap-2 p-2 overflow-y-auto content-start"></div>
                     </div>
                 </div>
             </div>
