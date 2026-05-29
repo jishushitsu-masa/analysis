@@ -118,6 +118,13 @@ function setupFileDropzone(dropzoneId, inputEl, containerEl, callback) {
         }
     });
 
+    dropzone.addEventListener('click', (e) => {
+        // Prevent triggering if clicking exactly on the label or input to avoid double triggers
+        if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'LABEL' && e.target.closest('label') === null) {
+            inputEl.click();
+        }
+    });
+
     inputEl.addEventListener('change', (e) => {
         if (e.target.files && e.target.files.length > 0) {
             handleFiles(e.target.files, containerEl, callback);
