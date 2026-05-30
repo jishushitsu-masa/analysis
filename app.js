@@ -180,7 +180,14 @@ async function callGemini(messages) {
         const response = await fetch(endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ contents: messages })
+            body: JSON.stringify({ 
+                contents: messages,
+                generationConfig: {
+                    temperature: 0.1, // 低いほど安定した回答になる
+                    topK: 32,
+                    topP: 0.8
+                }
+            })
         });
 
         const data = await response.json();
